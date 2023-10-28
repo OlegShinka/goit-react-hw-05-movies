@@ -11,7 +11,7 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const updateQuery = query => {
-    if (query.value === '') {
+    if (query === '') {
       return setSearchParams({});
     } else {
       setSearchParams({ query: query.value });

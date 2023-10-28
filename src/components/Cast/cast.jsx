@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const Cast = () => {
-  const { movieId } = useParams;
+  const { movieId } = useParams();
   console.log(movieId);
   const [cast, setCast] = useState([]);
+  console.log('CAST:', cast);
   useEffect(() => {
     async function getResult() {
       try {
@@ -15,9 +16,19 @@ const Cast = () => {
     }
 
     getResult();
-    console.log('USEef');
+    //console.log('CAST:', cast);
+    console.log('USEeffect');
   }, [movieId]);
 
-  return <div>All cast {movieId}</div>;
+  return (
+    <div>
+      All cast
+      <ul>
+        {cast.map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 export default Cast;

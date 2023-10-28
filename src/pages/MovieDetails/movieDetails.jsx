@@ -6,7 +6,6 @@ import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 const MovieDetails = () => {
   const { movieId } = useParams();
 
-  console.log(movieId);
   const [title, setTitle] = useState('');
   const [popularity, setPopularity] = useState('');
   const [poster, setPoster] = useState('');

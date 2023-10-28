@@ -26,6 +26,7 @@ export const GetCast = async movieId => {
   const response = await axios.get(
     `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US&api_key=64951ac1864e1a2cf580c3f814e91024`
   );
+  console.log(typeof response.data);
   console.log(response.data);
   return response.data;
 };

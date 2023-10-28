@@ -4,7 +4,7 @@ import { lazy } from 'react';
 //import Movies from 'pages/Movies/Movies';
 //import MovieDetails from 'pages/MovieDetails/MovieDetails';
 
-import SharedLayuot from './SharedLayout/Sharedlayout';
+import SharedLayuot from './SharedLayout/sharedlayout.jsx';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
 
