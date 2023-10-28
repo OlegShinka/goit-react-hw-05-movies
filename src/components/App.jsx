@@ -4,11 +4,11 @@ import { lazy } from 'react';
 //import Movies from 'pages/Movies/Movies';
 //import MovieDetails from 'pages/MovieDetails/MovieDetails';
 
-import SharedLayuot from './SharedLayout/sharedlayout.jsx';
+import SharedLayuot from './SharedLayout/sharedlayout';
 import Cast from './Cast/cast';
-import Reviews from './Reviews/reviews.jsx';
+import Reviews from './Reviews/reviews';
 
-const Home = lazy(() => import('../pages/Home/home.jsx'));
+const Home = lazy(() => import('../pages/Home/home'));
 const Movies = lazy(() => import('../pages/Movies/movies'));
 const MovieDetails = lazy(() => import('../pages/MovieDetails/movieDetails'));
 
