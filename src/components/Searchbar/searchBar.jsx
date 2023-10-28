@@ -1,13 +1,29 @@
-export const SearchBar = ({ value, onChangeQuery }) => {
+import { useState } from 'react';
+const SearchBar = ({ onChangeQuery }) => {
+  const [value, setValue] = useState('');
+  //контрольована форма
+  const handleChange = evt => {
+    const { value } = evt.target;
+    setValue(value.toLowerCase());
+  };
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    const { value } = evt.target.elements;
+    onChangeQuery(value);
+  };
   return (
     <div>
-      <input
-        type="text"
-        value={value}
-        onChange={e => onChangeQuery(e.target.value)}
-        autoComplete="true"
-      />
-      <button type="submit">Search</button>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="value"
+          value={value}
+          onChange={handleChange}
+          autoComplete="true"
+        />
+        <button type="submit">Search</button>
+      </form>
     </div>
   );
 };

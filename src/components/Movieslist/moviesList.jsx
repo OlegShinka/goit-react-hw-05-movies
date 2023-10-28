@@ -1,22 +1,34 @@
+import { Link, useLocation } from 'react-router-dom';
+
 export const MoviesList = ({ results }) => {
-  console.log('2--->', results);
+  const location = useLocation();
   return (
     <div>
-      <h2>list:</h2>
-
-      {/* <ul>
-        {results.map(results => (
-          <li key={results.id}>
-            <h2>{results.title}</h2>
-          </li>
-        ))}
-      </ul> */}
-
-      {results.map(({ id, title }) => (
-        <div key={id}>
-          <h2>{title}</h2>
-        </div>
-      ))}
+      {results.length !== 0 && (
+        <ul>
+          {results.map(({ title, name, id }) => {
+            if (title) {
+              return (
+                <li key={id}>
+                  <Link to={`/movies/${id}`} state={{ from: location }}>
+                    {title}
+                  </Link>
+                </li>
+              );
+            } else {
+              return (
+                <li key={id}>
+                  <Link to={`/movies/${id}`} state={{ from: location }}>
+                    {name}
+                  </Link>
+                </li>
+              );
+            }
+          })}
+        </ul>
+      )}
     </div>
   );
 };
+
+export default MoviesList;

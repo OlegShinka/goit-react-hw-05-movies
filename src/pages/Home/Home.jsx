@@ -1,16 +1,16 @@
-import { MoviesList } from 'components/Movieslist/moviesList';
+import { MoviesList } from 'components/Movieslist/MoviesList';
 import { GetPopMovies } from 'components/api';
 import { useEffect, useState } from 'react';
 
-export default function Home() {
+const Home = () => {
   const [results, setResult] = useState([]);
-  console.log(results);
+
   useEffect(() => {
     async function getResult() {
       try {
         const responseData = await GetPopMovies();
 
-        setResult([responseData.results]);
+        setResult(responseData.results);
         //
       } catch (error) {}
     }
@@ -20,8 +20,8 @@ export default function Home() {
 
   return (
     <div>
-      <h2>Home</h2>
       <MoviesList results={results} />
     </div>
   );
-}
+};
+export default Home;
