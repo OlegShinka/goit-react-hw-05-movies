@@ -6,18 +6,16 @@ const Cast = () => {
   const { movieId } = useParams();
   console.log(movieId);
   const [cast, setCast] = useState([]);
+  // const[profile, setProfile] = useState('')
   console.log('CAST:', cast);
   useEffect(() => {
     async function getResult() {
       try {
         const responseData = await GetCast(movieId);
-        setCast(responseData.data.cast);
+        setCast(responseData.cast);
       } catch (error) {}
     }
-
     getResult();
-    //console.log('CAST:', cast);
-    console.log('USEeffect');
   }, [movieId]);
 
   return (
@@ -25,7 +23,13 @@ const Cast = () => {
       All cast
       <ul>
         {cast.map(item => (
-          <li key={item.id}>{item.name}</li>
+          <li key={item.id}>
+            {item.name}
+            <img
+              src={`https://image.tmdb.org/t/p/w200${item.profile_path}`}
+              alt={item.name}
+            />
+          </li>
         ))}
       </ul>
     </div>
