@@ -1,5 +1,5 @@
-import { MoviesList } from 'components/Movieslist/MoviesList';
-import SearchBar from 'components/Searchbar/SearchBar';
+import { MoviesList } from 'components/Movieslist/moviesList';
+import SearchBar from 'components/Searchbar/searchBar';
 import { GetMovies } from 'components/api';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';

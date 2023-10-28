@@ -6,9 +6,9 @@ import { lazy } from 'react';
 
 import SharedLayuot from './SharedLayout/sharedlayout.jsx';
 import Cast from './Cast/cast';
-import Reviews from './Reviews/Reviews';
+import Reviews from './Reviews/reviews.jsx';
 
-const Home = lazy(() => import('../pages/Home/Home'));
+const Home = lazy(() => import('../pages/Home/home.jsx'));
 const Movies = lazy(() => import('../pages/Movies/movies'));
 const MovieDetails = lazy(() => import('../pages/MovieDetails/movieDetails'));
 

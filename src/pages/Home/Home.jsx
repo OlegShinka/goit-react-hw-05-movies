@@ -1,4 +1,4 @@
-import { MoviesList } from 'components/Movieslist/MoviesList';
+import { MoviesList } from 'components/Movieslist/moviesList';
 import { GetPopMovies } from 'components/api';
 import { useEffect, useState } from 'react';
 
