@@ -7,6 +7,7 @@ import { lazy } from 'react';
 import SharedLayuot from './SharedLayout/sharedlayout';
 import Cast from './Cast/cast';
 import Reviews from './Reviews/reviews';
+import NotFound from 'pages/NotFound/NotFound';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Movies = lazy(() => import('../pages/Movies/movies'));
@@ -24,6 +25,7 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

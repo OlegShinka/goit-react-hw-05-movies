@@ -6,23 +6,20 @@ import { useSearchParams } from 'react-router-dom';
 
 const Movies = () => {
   const [results, setResults] = useState([]);
-  //const [queryString, setQueryString] = useState('');
 
   const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get('query') ?? '';
 
   const updateQuery = query => {
     if (query === '') {
       return setSearchParams({});
-    } else {
-      setSearchParams({ query: query.value });
     }
-    // setQueryString(query.value);
+    setSearchParams({ query: query.value });
   };
 
   useEffect(() => {
-    const query = searchParams.get('query');
     //відмина 1-го рендера сторінки по умові, якщо пустий рядок запиту
-    if (query === '') {
+    if (!query) {
       return;
     }
 
@@ -35,7 +32,7 @@ const Movies = () => {
     }
 
     getResult();
-  }, [searchParams]);
+  }, [query, searchParams]);
 
   return (
     <div>

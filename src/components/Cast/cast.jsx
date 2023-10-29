@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const Cast = () => {
   const { movieId } = useParams();
-  console.log(movieId);
+
   const [cast, setCast] = useState([]);
   // const[profile, setProfile] = useState('')
   console.log('CAST:', cast);

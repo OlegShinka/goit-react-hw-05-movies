@@ -43,10 +43,10 @@ const MovieDetails = () => {
         Genres: <span>{genresName}</span>
         <span> {genresSubName}</span>
       </h3>
-      <img src={`https://image.tmdb.org/t/p/w500${poster}`} alt={title} />
+      <img src={`https://image.tmdb.org/t/p/w300${poster}`} alt={title} />
       <p>About: {overview}</p>
-      <Link to="cast">Go to cast</Link>
-      <Link to="reviews">Go to reviews</Link>
+      <Link to="cast">Cast </Link>
+      <Link to="reviews">Reviews </Link>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
