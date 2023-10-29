@@ -1,11 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-
+import { List } from './moviesList.styled';
 export const MoviesList = ({ results }) => {
   const location = useLocation();
   return (
     <div>
       {results.length !== 0 && (
-        <ul>
+        <List>
           {results.map(({ title, name, id }) => {
             if (title) {
               return (
@@ -25,7 +25,7 @@ export const MoviesList = ({ results }) => {
               );
             }
           })}
-        </ul>
+        </List>
       )}
     </div>
   );

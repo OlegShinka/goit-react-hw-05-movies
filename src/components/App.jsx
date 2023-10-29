@@ -1,8 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy } from 'react';
-//import Home from 'pages/Home/Home';
-//import Movies from 'pages/Movies/Movies';
-//import MovieDetails from 'pages/MovieDetails/MovieDetails';
 
 import SharedLayuot from './SharedLayout/sharedlayout';
 import Cast from './Cast/cast';

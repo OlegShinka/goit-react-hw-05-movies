@@ -3,9 +3,11 @@ import SearchBar from 'components/Searchbar/searchBar';
 import { GetMovies } from 'components/api';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
+import { Loader } from 'components/Loader/loader';
 const Movies = () => {
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
@@ -25,10 +27,16 @@ const Movies = () => {
 
     async function getResult() {
       try {
+        setLoading(true);
+        setError(false);
         const responseData = await GetMovies(query);
 
         setResults(responseData.results);
-      } catch (error) {}
+      } catch (error) {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
     }
 
     getResult();
@@ -36,7 +44,9 @@ const Movies = () => {
 
   return (
     <div>
-      <h2>Movies</h2>
+      {loading && <Loader />}
+      {error && <p> Reload page please ...</p>}
+
       <SearchBar onChangeQuery={updateQuery} />
       <MoviesList results={results} />
     </div>
