@@ -10,7 +10,7 @@ const Reviews = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [notInfo, setNotInfo] = useState(false);
-  console.log(notInfo);
+
   useEffect(() => {
     async function getResult() {
       try {
@@ -18,7 +18,7 @@ const Reviews = () => {
         setError(false);
         const responseData = await GetReviews(movieId);
         setResults(responseData.results);
-        console.log(responseData.results.length);
+
         if (results.length === 0) {
           setNotInfo(true);
         } else {

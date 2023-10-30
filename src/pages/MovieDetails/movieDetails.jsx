@@ -69,7 +69,7 @@ const MovieDetails = () => {
       </Link>
       <Container>
         <div>
-          <img src={`https://image.tmdb.org/t/p/w300${poster}`} alt={title} />
+          <img src={`https://image.tmdb.org/t/p/w400${poster}`} alt={title} />
         </div>
         <div>
           <h2> {title}</h2>

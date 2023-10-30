@@ -4,7 +4,7 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 const API_KEY = '64951ac1864e1a2cf580c3f814e91024';
 const LANGUAGE = 'language=en-US';
 export const GetPopMovies = async () => {
-  const response = await axios.get(`/trending/movie/day?api_key=${API_KEY}`);
+  const response = await axios.get(`/trending/movie/week?api_key=${API_KEY}`);
   return response.data;
 };
 
